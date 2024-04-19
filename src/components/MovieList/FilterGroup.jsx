@@ -6,17 +6,21 @@ const FilterGroup = ({ minRating, onRatingClick, ratings }) => {
       {ratings.map((rate) => (
         <li
           className={
-            minRating === { rate }
+            minRating === rate // Remove curly braces around rate
               ? "movie_filter_item active"
               : "movie_filter_item"
           }
           key={rate}
-          onClick={() => onRatingClick({ rate })}
+          onClick={() => onRatingClick(rate)} // Remove curly braces around rate
         >
           {rate}+ Star
         </li>
       ))}
-      {/* <li
+    </ul>
+  );
+};
+{
+  /* <li
         className={
           minRating === 8 ? "movie_filter_item active" : "movie_filter_item"
         }
@@ -39,9 +43,10 @@ const FilterGroup = ({ minRating, onRatingClick, ratings }) => {
         onClick={() => onRatingClick(6)}
       >
         6+ Star
-      </li> */}
-    </ul>
-  );
-};
+      </li> */
+}
+//     </ul>
+//   );
+// };
 
 export default FilterGroup;
