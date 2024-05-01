@@ -2,14 +2,12 @@ import React from "react";
 import "./MovieCard.css";
 import moviePoster from "../../assets/poster.jpeg";
 import star from "../../assets/star.jpeg";
+import { NavLink } from "react-router-dom";
+import SingleMovie from "./SingleMovie";
 
 const MovieCard = ({ movie }) => {
   return (
-    <a
-      href={`https://www.themoviedb.org/movie/${movie.id}`}
-      target="_blank"
-      className="movie_card"
-    >
+    <NavLink to={`movie/${movie.id}`} target="_blank" className="movie_card">
       <img
         src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
         alt="Movie Poster"
@@ -28,7 +26,7 @@ const MovieCard = ({ movie }) => {
           {movie.overview.slice(0, 100) + "..."}
         </p>
       </div>
-    </a>
+    </NavLink>
   );
 };
 

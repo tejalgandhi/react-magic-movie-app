@@ -4,6 +4,7 @@ import fire from "../../assets/fire.jpeg";
 import star from "../../assets/star.jpeg";
 import party from "../../assets/partying.jpeg";
 import MovieList from "../MovieList/MovieList";
+import SingleMovie from "../MovieList/SingleMovie";
 
 const AllRouting = () => {
   return (
@@ -30,6 +31,7 @@ const AllRouting = () => {
           <MovieList title="Upcoming" type="upcoming" emoji={party}></MovieList>
         }
       ></Route>
+      <Route path="/movie/:id" element={<SingleMovie />}></Route>
     </Routes>
   );
 };
