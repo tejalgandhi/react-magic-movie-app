@@ -16,7 +16,7 @@ const MovieList = ({ title, type, emoji }) => {
 
   useEffect(() => {
     fectMovies();
-  }, []);
+  }, [type]);
 
   useEffect(() => {
     if (sort.by !== "default") {
@@ -54,7 +54,7 @@ const MovieList = ({ title, type, emoji }) => {
   };
 
   return (
-    <section className="movie_list" id={type}>
+    <section className="movie_list">
       {/* Header section */}
       <header className="align_center movie_list_header">
         <h2 className="align_center movie_list_heading">
